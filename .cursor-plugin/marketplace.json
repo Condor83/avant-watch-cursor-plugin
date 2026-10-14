@@ -1,0 +1,17 @@
+{
+  "name": "avant-watch",
+  "owner": {
+    "name": "Avant Watch"
+  },
+  "metadata": {
+    "description": "Read-only monitoring data on Avant Protocol's strategies, for Avant team members' agents",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "avant-watch",
+      "source": "./plugins/avant-watch",
+      "description": "Avant Protocol strategy monitoring: positions, ROE, health factors, borrow rates, alerts, NAV and transactions, plus an event log for agents that react to changes"
+    }
+  ]
+}

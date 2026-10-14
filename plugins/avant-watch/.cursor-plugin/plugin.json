@@ -1,0 +1,12 @@
+{
+  "name": "avant-watch",
+  "displayName": "Avant Watch",
+  "version": "0.1.0",
+  "description": "Read-only monitoring data on Avant Protocol's strategies for Avant team members: a briefing, strategies and their positions, ROE and yield components, health factors vs baseline, borrow rates and kinks, alerts, NAV vs published, transaction search, and an event log to react to changes. Sign-in required (Avant team accounts).",
+  "author": {
+    "name": "Avant Watch"
+  },
+  "license": "MIT",
+  "keywords": ["avant", "defi", "monitoring", "risk", "lending", "yield", "mcp"],
+  "logo": "assets/logo.svg"
+}

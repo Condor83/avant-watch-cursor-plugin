@@ -1,0 +1,23 @@
+# Validates the plugin with Cursor's template validator, fetched from cursor/plugin-template at a pinned commit (not vendored: the template
+# repository has no license).
+name: validate
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      VALIDATOR_URL: https://raw.githubusercontent.com/cursor/plugin-template/46216072ac5750f782f95bb325b4d12b7c3ae9c9/scripts/validate-template.mjs
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: fetch the validator
+        run: curl -fsSL "$VALIDATOR_URL" -o /tmp/validate-template.mjs
+      - name: validate
+        run: node /tmp/validate-template.mjs
+      - name: no secrets, the URL only
+        run: |
+          ! grep -rEi 'cf-access-client-secret|authorization|bearer|api[_-]?key' plugins .cursor-plugin
